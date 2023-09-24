@@ -1,0 +1,140 @@
+* {
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.player-background {
+    background: url(album-cover/twenty-one-pilot.jpg) no-repeat;
+    filter: blur(5px);
+}
+
+.background {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background.active {
+    display: block;
+}
+
+.player {
+    width: 30%;
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #B8DDDB;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 10px 10px 5px;
+}
+
+.player-picture {
+    height: 50%;
+    background: url(album-cover/twenty-one-pilot.jpg);
+    background-size: 100% 100%;
+}
+
+.player-navigation {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.song-info {
+    display: none;
+    text-align: center;
+    font-size: 90%;
+    height: 30%;
+    width: 100%;
+    letter-spacing: 0.2em;
+}
+
+.name {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.singer {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.song-info.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.buttons {
+    display: flex;
+    height: 40%;
+    width: 100%;
+    align-items: center;
+}
+
+.next-prev {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next-prev-button {
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.play-pause {
+    background: url(img/play-icon.svg) center no-repeat;
+    width: 75%;
+    height: 75%;
+    cursor: pointer;
+}
+
+.play-pause.active {
+    background: url(img/pause-icon.svg) center no-repeat;
+}
+
+.time-and-volume {
+    display: flex;
+    height: 30%;
+    width: 100%;
+    align-items: center;
+}
+
+.volume {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume-button {
+    background: url(img/volume-icon.svg) center no-repeat;
+    width: 70%;
+    height: 70%;
+    cursor: pointer;
+}
+
+.volume-button.active {
+    background: url(img/mute-icon.svg) center no-repeat;
+}
+
+.progress-bar {
+    width: 80%;
+}
+
+
+footer {
+    display: none;
+}
+

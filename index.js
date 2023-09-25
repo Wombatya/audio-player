@@ -110,3 +110,12 @@ audio.addEventListener('timeupdate', function(e){
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%`
 })
+
+progressBar.addEventListener('click', function(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+    audio.currentTime = (clickX / width) * duration
+}
+)
+

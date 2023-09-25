@@ -13,6 +13,14 @@ const audio = document.querySelector('.audio');
 const currentTime = document.querySelector('.current-time');
 const totalTime = document.querySelector('.total-time');
 
+let getTotalTime = function() {
+   const time = audio.duration;
+   console.log(time+'!')
+   const minutes = Math.floor(time / 60);
+   const result = `${minutes}:${Math.floor(time - (minutes*60))}`;
+   return result;
+}
+
 let playlist = ['Twenty one pilots - Shy Away', 'Щенки - Такую как ты', 'Motorama- Wind in her hair', 'Bonaparte - Weinbar'];
 
 let index = 0;
@@ -24,8 +32,8 @@ cover[index].classList.add('active');
 songInfo[index].classList.add('active');
 playerBackground.style.background = background[index];
 playerPicture.style.background = cover[index];
-// totalTime.innerHTML = audio.duration;
-console.log(audio.duration)
+totalTime.innerHTML = getTotalTime();
+
 playSong.addEventListener('click', function() {
     if (!isPlay) {
         playSong.classList.toggle('active');
@@ -118,4 +126,8 @@ progressBar.addEventListener('click', function(e) {
     audio.currentTime = (clickX / width) * duration
 }
 )
+
+audio.addEventListener('loadedmetadata', function() {
+    totalTime.innerHTML = getTotalTime();
+})
 

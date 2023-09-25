@@ -12,6 +12,7 @@ const progress = document.querySelector('.progress');
 const audio = document.querySelector('.audio');
 const timeNow = document.querySelector('.current-time');
 const totalTime = document.querySelector('.total-time');
+const volumeButton = document.querySelector('.volume-button');
 
 let getTotalTime = function() {
    const time = audio.duration;
@@ -137,5 +138,15 @@ progressBar.addEventListener('click', function(e) {
 
 audio.addEventListener('loadedmetadata', function() {
     totalTime.innerHTML = getTotalTime();
+})
+
+volumeButton.addEventListener('click', function() {
+    if (audio.muted) {
+        audio.muted = false;
+    }
+    else {
+        audio.muted = true;
+    }
+    volumeButton.classList.toggle('active');
 })
 

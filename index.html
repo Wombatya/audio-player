@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio-player</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.png" type="image/ico" />
+    <link rel="icon" href="img/favicon.png" type="image/ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="player-background">
-    <img src="album-cover/twenty-one-pilot.jpg" alt="Twenty one pilots" class="background active">
+    <img src="album-cover/twenty-one-pilot.jpg" alt="Twenty one pilots" class="background">
     <img src="album-cover/щенки.jpg" alt="Schenki" class="background">
     <img src="album-cover/motorama.jpg" alt="Motorama" class="background">
     <img src="album-cover/bonaparte.jpg" alt="Bonaparte" class="background">
 </div>
     <div class="player">
-    <div class="player-picture"></div>
+    <div class="player-picture">
+    <img src="album-cover/twenty-one-pilot.jpg" alt="Twenty one pilots" class="cover">
+    <img src="album-cover/щенки.jpg" alt="Schenki" class="cover">
+    <img src="album-cover/motorama.jpg" alt="Motorama" class="cover">
+    <img src="album-cover/bonaparte.jpg" alt="Bonaparte" class="cover">
+    </div>
     <div class="player-navigation">
-        <audio></audio>
-        <div class="song-info active">
+        <audio class="audio" src="music/Twenty one pilots - Shy Away.mp3"></audio>
+        <div class="song-info">
             <p class="name">Shy Away</p>
             <p class="singer">Twenty One Pilots</p>
         </div>

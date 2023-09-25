@@ -10,13 +10,20 @@ const playSong = document.querySelector('.play-pause');
 const progressBar = document.querySelector('.progress-bar');
 const progress = document.querySelector('.progress');
 const audio = document.querySelector('.audio');
-const currentTime = document.querySelector('.current-time');
+const timeNow = document.querySelector('.current-time');
 const totalTime = document.querySelector('.total-time');
 
 let getTotalTime = function() {
    const time = audio.duration;
    console.log(time+'!')
    const minutes = Math.floor(time / 60);
+   const result = `${minutes}:${Math.floor(time - (minutes*60))}`;
+   return result;
+}
+
+let getTimeNow = function() {
+    let time = audio.currentTime;
+    const minutes = Math.floor(time / 60);
    const result = `${minutes}:${Math.floor(time - (minutes*60))}`;
    return result;
 }
@@ -116,14 +123,15 @@ prevSong.addEventListener('click', function() {
 audio.addEventListener('timeupdate', function(e){
     const {duration, currentTime} = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
-    progress.style.width = `${progressPercent}%`
+    progress.style.width = `${progressPercent}%`;
+    timeNow.innerHTML = getTimeNow();
 })
 
 progressBar.addEventListener('click', function(e) {
     const width = this.clientWidth;
     const clickX = e.offsetX;
     const duration = audio.duration;
-    audio.currentTime = (clickX / width) * duration
+    audio.currentTime = (clickX / width) * duration;
 }
 )
 

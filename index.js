@@ -10,6 +10,8 @@ const playSong = document.querySelector('.play-pause');
 const progressBar = document.querySelector('.progress-bar');
 const progress = document.querySelector('.progress');
 const audio = document.querySelector('.audio');
+const currentTime = document.querySelector('.current-time');
+const totalTime = document.querySelector('.total-time');
 
 let playlist = ['Twenty one pilots - Shy Away', 'Щенки - Такую как ты', 'Motorama- Wind in her hair', 'Bonaparte - Weinbar'];
 
@@ -22,7 +24,8 @@ cover[index].classList.add('active');
 songInfo[index].classList.add('active');
 playerBackground.style.background = background[index];
 playerPicture.style.background = cover[index];
-
+// totalTime.innerHTML = audio.duration;
+console.log(audio.duration)
 playSong.addEventListener('click', function() {
     if (!isPlay) {
         playSong.classList.toggle('active');
@@ -45,6 +48,7 @@ nextSong.addEventListener('click', function() {
         playerBackground.style.background = background[index].classList.add('active');
         playerPicture.style.background = cover[index].classList.add('active');
         songInfo[index].classList.add('active');
+        progress.style.width = '0px';
         audio.src = `music/${playlist[index]}.mp3`;
         if (isPlay){
         playSong.classList.toggle('active');
@@ -59,6 +63,7 @@ nextSong.addEventListener('click', function() {
         playerBackground.style.background = background[index].classList.add('active');
         playerPicture.style.background = cover[index].classList.add('active');
         songInfo[index].classList.add('active');
+        progress.style.width = '0px';
         audio.src = `music/${playlist[index]}.mp3`;
         if (isPlay) {
         playSong.classList.toggle('active');
@@ -76,6 +81,7 @@ prevSong.addEventListener('click', function() {
         playerBackground.style.background = background[index].classList.add('active');
         playerPicture.style.background = cover[index].classList.add('active');
         songInfo[index].classList.add('active');
+        progress.style.width = '0px';
         audio.src = `music/${playlist[index]}.mp3`;
         if (isPlay){
         playSong.classList.toggle('active');
@@ -90,10 +96,17 @@ prevSong.addEventListener('click', function() {
         playerBackground.style.background = background[index].classList.add('active');
         playerPicture.style.background = cover[index].classList.add('active');
         songInfo[index].classList.add('active');
+        progress.style.width = '0px';
         audio.src = `music/${playlist[index]}.mp3`;
         if (isPlay){
         playSong.classList.toggle('active');
         isPlay = false;
         }
     }
+})
+
+audio.addEventListener('timeupdate', function(e){
+    const {duration, currentTime} = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    progress.style.width = `${progressPercent}%`
 })

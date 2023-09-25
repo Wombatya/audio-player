@@ -139,7 +139,16 @@
 
 .progress-bar-container {
     width: 80%;
-    height: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.time {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .progress-bar {
@@ -154,7 +163,6 @@
 
 .progress {
     background: #08AD74;
-    width: 80px;
     height: 100%;
 }
 

@@ -65,4 +65,35 @@ nextSong.addEventListener('click', function() {
         isPlay = false;
         }
     }
+});
+
+prevSong.addEventListener('click', function() {
+    if (index === 0) {
+        background[index].classList.toggle('active');
+        cover[index].classList.toggle('active');
+        songInfo[index].classList.toggle('active'); 
+        index = playlist.length-1; 
+        playerBackground.style.background = background[index].classList.add('active');
+        playerPicture.style.background = cover[index].classList.add('active');
+        songInfo[index].classList.add('active');
+        audio.src = `music/${playlist[index]}.mp3`;
+        if (isPlay){
+        playSong.classList.toggle('active');
+        isPlay = false;
+        }
+    }
+    else {
+        background[index].classList.toggle('active');
+        cover[index].classList.toggle('active');
+        songInfo[index].classList.toggle('active'); 
+        index --;
+        playerBackground.style.background = background[index].classList.add('active');
+        playerPicture.style.background = cover[index].classList.add('active');
+        songInfo[index].classList.add('active');
+        audio.src = `music/${playlist[index]}.mp3`;
+        if (isPlay){
+        playSong.classList.toggle('active');
+        isPlay = false;
+        }
+    }
 })

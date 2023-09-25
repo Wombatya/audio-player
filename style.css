@@ -129,8 +129,25 @@
     background: url(img/mute-icon.svg) center no-repeat;
 }
 
-.progress-bar {
+.progress-bar-container {
     width: 80%;
+    height: 10px;
+}
+
+.progress-bar {
+    width: 90%;
+    height: 10px;
+    border-radius: 5px;
+    background: black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.progress {
+    background: #08AD74;
+    width: 80px;
+    height: 100%;
 }
 
 footer {

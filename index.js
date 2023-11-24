@@ -25,8 +25,10 @@ let getTotalTime = function() {
 let getTimeNow = function() {
     let time = audio.currentTime;
     const minutes = Math.floor(time / 60);
-   const result = `${minutes}:${Math.floor(time - (minutes*60))}`;
-   return result;
+    if (Math.floor(time - (minutes*60)) < 10) {
+        return `${minutes}:0${Math.floor(time - (minutes*60))}`
+    }
+   return `${minutes}:${Math.floor(time - (minutes*60))}`;
 }
 
 let playlist = ['Twenty one pilots - Shy Away', 'Щенки - Такую как ты', 'Motorama- Wind in her hair', 'Bonaparte - Weinbar'];
